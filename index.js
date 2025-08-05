@@ -278,7 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
   toggleModeBtn.textContent = 'Switch to Scientific';
 });
 
-// Add event listener for history panel toggle
+// Event listener for history panel toggle
 document.getElementById('historyPanel').addEventListener('click', (e) => {
   if (e.target.id === 'historyPanel') {
     const historyPanel = document.getElementById('historyPanel');
@@ -297,20 +297,5 @@ document.getElementById('clearHistoryBtn').addEventListener('click', () => {
     }
   }
 });
-// Add clear history button functionality
-document.getElementById('clearHistoryBtn').addEventListener('click', () => {
-  if (confirm('Are you sure you want to clear the history?')) {
-    history = [];
-    localStorage.removeItem(HISTORY_KEY);
-    renderHistory();
-  }
-});
-// Add event listener for clear history button
-document.getElementById('clearHistoryBtn').addEventListener('click', () => {
-  if (confirm('Are you sure you want to clear the history?')) {
-    history = [];
-    localStorage.removeItem(HISTORY_KEY);
-    renderHistory();
-  }
-});
+
 
