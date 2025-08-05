@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scientific Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="container">
+
+    <button id="toggleModeBtn">Switch to Scientific</button>
+
+    <div id="calculator">
+      <input type="text" id="display" readonly value="0" />
+
+      <div id="keys" class="basic">
+        <!-- Basic buttons -->
+        <button data-action="clear">C</button>
+        <button data-action="delete">⌫</button>
+        <button data-action="percent">%</button>
+        <button data-action="divide" class="operator-btn">÷</button>
+
+        <button data-digit="7">7</button>
+        <button data-digit="8">8</button>
+        <button data-digit="9">9</button>
+        <button data-action="multiply" class="operator-btn">×</button>
+
+        <button data-digit="4">4</button>
+        <button data-digit="5">5</button>
+        <button data-digit="6">6</button>
+        <button data-action="subtract" class="operator-btn">−</button>
+
+        <button data-digit="1">1</button>
+        <button data-digit="2">2</button>
+        <button data-digit="3">3</button>
+        <button data-action="add" class="operator-btn">+</button>
+
+        <button data-digit="0" style="grid-column: span 2;">0</button>
+        <button data-digit=".">.</button>
+        <button data-action="equals" class="operator-btn">=</button>
+      </div>
+
+      <div id="scientificKeys" class="scientific" style="display:none;">
+        <!-- Scientific buttons -->
+        <button data-action="sin">sin</button>
+        <button data-action="cos">cos</button>
+        <button data-action="tan">tan</button>
+        <button data-action="log">log</button>
+
+        <button data-action="sqrt">√</button>
+        <button data-action="pow2">x²</button>
+        <button data-action="pow3">x³</button>
+        <button data-action="pow">xʸ</button>
+
+        <button data-action="pi">π</button>
+        <button data-action="e">e</button>
+        <button data-action="abs">abs</button>
+        <button data-action="factorial">!</button>
+      </div>
+    </div>
+
+    <div id="historyPanel">
+      <h2>History</h2>
+      <ul id="historyList"></ul>
+      <button id="exportHistoryBtn">Export History</button>
+      <input type="file" id="importFile" accept=".json" style="display:none;" />
+      <button id="importHistoryBtn">Import History</button>
+      <button id="clearHistoryBtn">Clear History</button>
+    </div>
+
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

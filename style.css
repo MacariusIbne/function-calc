@@ -1,0 +1,172 @@
+/* Container and basic layout */
+#container {
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+/* Toggle button */
+#toggleModeBtn {
+  display: block;
+  margin: 0 auto 15px auto;
+  padding: 10px 18px;
+  font-size: 16px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#toggleModeBtn:hover {
+  background-color: #0056b3;
+}
+
+/* Calculator display */
+#display {
+  width: 100%;
+  height: 50px;
+  font-size: 28px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  text-align: right;
+  margin-bottom: 15px;
+  background-color: #e9ecef;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+/* Keys container */
+#keys,
+#scientificKeys {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Basic keys grid */
+#keys.basic {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Scientific keys grid */
+#scientificKeys.scientific {
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+/* Buttons style */
+button {
+  background-color: white;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 18px;
+  padding: 12px 0;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+button:hover {
+  background-color: #f1f1f1;
+  border-color: #888;
+}
+
+button.operator-btn {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+button.operator-btn:hover {
+  background-color: #0056b3;
+  border-color: #004080;
+}
+
+/* Span two columns for zero button */
+#keys button[data-digit="0"] {
+  grid-column: span 2;
+}
+
+/* History panel */
+#historyPanel {
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+}
+
+#historyPanel h2 {
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 20px;
+  color: #333;
+}
+
+#historyList {
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 12px;
+  background-color: white;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #444;
+  list-style-type: none;
+}
+
+#historyList li {
+  padding: 4px 0;
+  border-bottom: 1px solid #eee;
+}
+
+#historyList li:last-child {
+  border-bottom: none;
+}
+
+/* Export and import buttons */
+#exportHistoryBtn,
+#importHistoryBtn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+#exportHistoryBtn:hover,
+#importHistoryBtn:hover {
+  background-color: #1e7e34;
+}
+#exportHistoryBtn:active,
+#importHistoryBtn:active {
+  background-color: #155724;
+}
+
+#clearHistoryBtn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#clearHistoryBtn:hover {
+  background-color: #1e7e34;
+}
+
+#clearHistoryBtn:active {
+  background-color: #155724;
+}
