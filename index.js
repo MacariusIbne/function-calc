@@ -6,6 +6,7 @@ const historyList = document.getElementById('historyList');
 const exportHistoryBtn = document.getElementById('exportHistoryBtn');
 const importHistoryBtn = document.getElementById('importHistoryBtn');
 const importFile = document.getElementById('importFile');
+const clearHistoryBtn = document.getElementById('clearHistoryBtn');
 
 let currentInput = '0';
 let operator = null;
@@ -286,16 +287,21 @@ document.getElementById('historyPanel').addEventListener('click', (e) => {
   }
 });
 document.getElementById('historyPanel').classList.add('collapsed'); // Start collapsed
-document.getElementById('clearHistoryBtn').addEventListener('click', () => {
-  // Optional confirmation prompt
-  if (confirm('Are you sure you want to clear the history?')) {
-    localStorage.removeItem('calcHistory');
+document.addEventListener('DOMContentLoaded', () => {
+  const clearBtn = document.getElementById('clearHistoryBtn');
 
-    const historyContainer = document.getElementById('history');
-    if (historyContainer) {
-      historyContainer.innerHTML = '<em>No history yet.</em>';
-    }
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      if (confirm('Are you sure you want to clear the history?')) {
+        localStorage.removeItem('calcHistory');
+
+        const historyContainer = document.getElementById('history');
+        if (historyContainer) {
+          historyContainer.innerHTML = '<em>No history yet.</em>';
+        }
+      }
+    });
+  } else {
+    console.warn('Clear History button not found.');
   }
 });
-
-
