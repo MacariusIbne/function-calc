@@ -65,6 +65,7 @@
     <div class="error" id="errorMsg"></div>
     <input type="text" id="username" placeholder="Username" required />
     <input type="password" id="password" placeholder="Password" required />
+    <input type="email" id="Email" placeholder="Put Email" required />
     <button type="submit">Login</button>
     <div class="links">
       <a href="signup.html">Sign Up</a> |
@@ -80,6 +81,7 @@
       e.preventDefault();
       const username = loginForm.username.value.trim();
       const password = loginForm.password.value;
+      const email = loginForm.Email.value.trim();
 
       // Get users from localStorage
       const users = JSON.parse(localStorage.getItem('users') || '{}');
@@ -94,6 +96,11 @@
         return;
       }
 
+      if (users[username].email !== email) {
+        errorMsg.textContent = 'Email does not match.';
+        return;
+      }
+
       // Save logged-in user to sessionStorage
       sessionStorage.setItem('loggedInUser', username);
 
@@ -102,5 +109,4 @@
     });
   </script>
 </body>
-
 </html>
