@@ -65,6 +65,7 @@
     <div class="error" id="errorMsg"></div>
     <input type="text" id="username" placeholder="Choose a username" required />
     <input type="password" id="password" placeholder="Choose a password" required />
+    <input type="email" id="Email" placeholder="Put Email" required />
     <button type="submit">Sign Up</button>
     <div class="links">
       <a href="login.html">Login</a>
@@ -89,6 +90,14 @@
         return;
       }
 
+      // Validate email format
+      const email = signupForm.Email.value.trim();
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        errorMsg.textContent = 'Please enter a valid email address.';
+        return;
+      }
+
       // Get existing users
       const users = JSON.parse(localStorage.getItem('users') || '{}');
 
@@ -110,4 +119,3 @@
   </script>
 </body>
 </html>
-
